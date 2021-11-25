@@ -87,8 +87,7 @@ Take care to include the necessary class constraintes to polymorphic functions t
 second xs = head (tail xs) == second :: [Int] -> Int or as a polymorphic function second :: [a] -> a 
 swap (x,y) = (y,x) == swap :: (a,b) -> (b,a) 
 pair x y = (x,y) == pair :: a -> b -> (a,b)  --This is a curried function which is also polymorphic 
+double x = x*2 == double :: Num a => a -> a
+palindrome xs = reverse xs == xs   palindrome :: Eq a => [a] -> Bool
+twice f x = f (f x) == twice :: (t -> t) -> t -> t
 -}
-
-double x = x*2
-palindrome xs = reverse xs == xs 
-twice f x = f (f x)
